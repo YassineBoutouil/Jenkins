@@ -1,0 +1,5 @@
+FROM openjdk:8-jdk-alpine
+
+COPY tmp/main.java main.java
+
+ENTRYPOINT ["java","-jar","/main.jar"]
