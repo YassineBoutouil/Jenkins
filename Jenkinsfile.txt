@@ -1,17 +1,17 @@
 pipeline {
     agent any
     tools {
-        maven 'MonMaven'
+        maven "MonMaven"
     }
     stages {
-        stage('Git Checkout') {
+        stage("Git Checkout") {
             steps {
-                git credentialsId: 'connection_git-jenkins', url: 'https://github.com/YassineBoutouil/Jenkins.git'
+                git credentialsId: "connection_git-jenkins", url: "https://github.com/YassineBoutouil/Jenkins.git"
             }
         }
         stage('Build the application') {
             steps {
-                sh 'mvn clean install'
+                sh "mvn clean install"
             }
         }
         stage("Unit Test Execution") {
