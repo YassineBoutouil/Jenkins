@@ -1,5 +1,9 @@
 FROM openjdk:8-jdk-alpine
 
-COPY tmp/main.java main.java
+COPY main.java /app/main.java
 
-ENTRYPOINT ["java","-jar","/main.jar"]
+WORKDIR /app
+
+RUN javac main.java
+
+CMD ["java", "main"]
